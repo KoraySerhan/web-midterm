@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Calculate letter grade based on grading scale
     function calculateGrade(midterm, final, gradeBoundaries) {
-        const score = (midterm * 0.4 + final * 0.6) / 2;
+        const score = (midterm * 0.4 + final * 0.6);
         for (let [grade, { min, max }] of Object.entries(gradeBoundaries)) {
             if (score >= min && score <= max) return grade;
         }
