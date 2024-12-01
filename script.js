@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Calculate letter grade based on grading scale
     function calculateGrade(midterm, final, gradeBoundaries) {
-        const score = midterm * 0.4 + final * 0.6;
+        const score = (midterm * 0.4 + final * 0.6) / 2;
         for (let [grade, { min, max }] of Object.entries(gradeBoundaries)) {
             if (score >= min && score <= max) return grade;
         }
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Update student table and add event listener to delete buttons
+    // Update student table and add delete functionality
     function updateStudentTable(courseName) {
         const studentTable = document.getElementById("student-table").getElementsByTagName("tbody")[0];
         studentTable.innerHTML = "";
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const deleteBtn = row.querySelector(".delete-btn");
                     deleteBtn.addEventListener("click", () => {
                         deleteStudent(student.id, courseName);
-                        row.remove(); // Remove the row from the table
+                        row.remove();
                     });
                 }
             });
@@ -139,13 +139,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function deleteStudent(studentId, courseName) {
         const studentIndex = students.findIndex(student => student.id === studentId);
         if (studentIndex !== -1) {
-            // Remove the course from the student's courses
             const courseIndex = students[studentIndex].courses.findIndex(course => course.course === courseName);
             if (courseIndex !== -1) {
                 students[studentIndex].courses.splice(courseIndex, 1);
             }
 
-            // If the student has no more courses, remove the student completely
             if (students[studentIndex].courses.length === 0) {
                 students.splice(studentIndex, 1);
             }
@@ -195,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateStudentTableByFilter(students);
     });
 
-    // Update student table with filtered results
     function updateStudentTableByFilter(filteredStudents, courseName = null) {
         const studentTable = document.getElementById("student-table").getElementsByTagName("tbody")[0];
         studentTable.innerHTML = "";
@@ -211,8 +208,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         <td>${course.midterm}</td>
                         <td>${course.final}</td>
                         <td>${course.grade}</td>
-                        <td><button class="delete-btn">Sil</button></td>
+                        <td><button class="delete-btn">Delete</button></td>
                     `;
+
+                    const deleteBtn = row.querySelector(".delete-btn");
+                    deleteBtn.addEventListener("click", () => {
+                        deleteStudent(student.id, courseName);
+                        row.remove();
+                    });
                 }
             });
         });
