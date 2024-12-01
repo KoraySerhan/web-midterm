@@ -3,12 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #f0f0f0; /* Açık gri */
+    color: #333; /* Koyu gri */
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #4a4a4a; /* Koyu gri */
     color: white;
     text-align: center;
     padding: 1rem;
@@ -21,9 +21,10 @@ main {
 section {
     margin-bottom: 2rem;
     padding: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc; /* Orta gri */
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e0e0e0; /* Daha açık gri */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
 }
 
 .hidden {
@@ -40,7 +41,7 @@ section {
 .menu-btn {
     padding: 1rem 2rem;
     font-size: 1.2rem;
-    background-color: #4CAF50;
+    background-color: #4a4a4a; /* Koyu gri */
     color: white;
     border: none;
     border-radius: 8px;
@@ -49,7 +50,7 @@ section {
 }
 
 .menu-btn:hover {
-    background-color: #45a049;
+    background-color: #5a5a5a; /* Daha açık gri */
 }
 
 /* Form Styling */
@@ -75,18 +76,19 @@ label {
 .form-control {
     padding: 0.8rem;
     font-size: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc; /* Orta gri */
     border-radius: 5px;
+    background-color: #f7f7f7; /* Daha açık gri */
 }
 
 .form-control:focus {
     outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    border-color: #4a4a4a; /* Koyu gri */
+    box-shadow: 0 0 5px rgba(74, 74, 74, 0.5);
 }
 
 .btn-submit {
-    background-color: #4CAF50;
+    background-color: #4a4a4a; /* Koyu gri */
     color: white;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
@@ -98,7 +100,7 @@ label {
 }
 
 .btn-submit:hover {
-    background-color: #45a049;
+    background-color: #5a5a5a; /* Daha açık gri */
 }
 
 /* Table Styling */
@@ -109,30 +111,30 @@ label {
 }
 
 #student-table th, #student-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc; /* Orta gri */
     padding: 0.5rem;
     text-align: left;
 }
 
 #student-table th {
-    background-color: #f4f4f4;
+    background-color: #d0d0d0; /* Daha açık gri */
 }
 
 /* Lecture Stats Section */
 #lecture-stats {
     margin-top: 2rem;
     padding: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc; /* Orta gri */
     border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e0e0e0; /* Daha açık gri */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #333;
+    background-color: #4a4a4a; /* Koyu gri */
     color: white;
     margin-top: 2rem;
 }
